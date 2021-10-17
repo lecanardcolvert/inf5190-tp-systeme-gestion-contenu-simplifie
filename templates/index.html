@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Dernières publications{% endblock %}
+
+{% block content %}
+{% if articles|length > 0 %}
+{% for article in articles %}
+<div class="row mb-3">
+    <h2 style="font-weight: 600;">{{ article[0] }}</h2>
+    <p class="text-secondary">Publié par {{ article[2] }} - {{ article[3] }}</p>
+    <p class="fs-5">{{ article[4] }}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% if articles|length == 0 %}
+<p>Aucun article à afficher. Revenez plus tard !</p>
+{% endif %}
+{% endblock %}

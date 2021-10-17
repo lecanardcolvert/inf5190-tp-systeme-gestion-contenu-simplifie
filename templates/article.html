@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article[0] }}{% endblock %}
+
+{% block content %}
+<p class="text-secondary" style="margin-top:-1rem">Publié par {{ article[2] }} - {{ article[3] }}</p>
+<p class="fs-5">{{ article[4] }}</p>
+{% endblock %}

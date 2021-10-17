@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Ajouter un article{% endblock %}
+
+{% block content %}
+<p>Tous les champs sont obligatoires.</p>
+
+<form class="needs-validation" action="{{ url_for('new_article_page') }}" method="post" id="article-new-form">
+    <div class="mb-3">
+        <label class="form-label" for="title">Titre</label>
+        <input class="form-control" type="text" id="title" name="title" aria-describedby="title-help" required>
+        <div class="form-text" id="title-help">De 1 à 100 caractères.</div>
+    </div>
+
+    <div class="mb-3 col-6">
+        <label class="form-label" for="identifier">Identifiant</label>
+        <input class="form-control" type="text" id="identifier" name="identifier" aria-describedby="identifier-help" required>
+        <div class="form-text" id="identifier-help">De 1 à 50 caractères. Peut être composé avec des lettres, chiffres, et quelques symboles (- . _ ~).</div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="author">Auteur</label>
+        <input class="form-control" type="text" id="author" name="author" aria-describedby="author-help" required>
+        <div class="form-text" id="author-help">De 1 à 100 caractères.</div>
+    </div>
+
+    <div class="mb-3 col-6">
+        <label class="form-label" for="publication_date">Date de publication</label>
+        <input class="form-control" type="date" data-format="0000-00-00" id="publication_date" name="publication_date" aria-describedby="publication_date-help" required>
+        <div class="form-text" id="publication_date-help">Date au format AAAA-MM-JJ.</div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="paragraph">Paragraphe</label>
+        <textarea class="form-control" id="paragraph" name="paragraph" aria-describedby="paragraph-help" rows="4" required></textarea>
+        <div class="form-text" id="paragraph-help">De 1 à 500 caractères.</div>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Soumettre" id="article-new-submit">
+</form>
+{% endblock %}
